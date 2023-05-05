@@ -1,12 +1,14 @@
 package framework.ultralesson.webautomation.drivers;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import framework.ultralesson.webautomation.drivers.managers.DriverManager;
+import framework.ultralesson.webautomation.drivers.managers.FireFoxDriverManager;
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import io.github.bonigarcia.wdm.managers.EdgeDriverManager;
 import io.github.bonigarcia.wdm.managers.FirefoxDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class DriverCreator {
@@ -30,5 +32,20 @@ public class DriverCreator {
             }
             return browser;
         }
+    public WebDriverContext createDriverContext(String browser) {
+        browser = setDefaultBrowser(browser);
+        DriverManager<WebDriver> webDriverDriverManager = getBrowserManagers().get(browser);
+        return new WebDriverContext(webDriverDriverManager);
+    }
+
+    // Build a Browser Managers Map
+    public Map<String, DriverManager<WebDriver>> getBrowserManagers() {
+        Map<String,DriverManager<WebDriver>> driverManagerMap = new HashMap<>();
+        driverManagerMap.put("chrome", new framework.ultralesson.webautomation.drivers.managers.ChromeDriverManager());
+        driverManagerMap.put("firefox", new FireFoxDriverManager());
+        driverManagerMap.put("edge", new framework.ultralesson.webautomation.drivers.managers.EdgeDriverManager());
+        return driverManagerMap;
+    }
+
 
 }
