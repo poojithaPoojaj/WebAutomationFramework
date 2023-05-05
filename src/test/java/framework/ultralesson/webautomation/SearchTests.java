@@ -1,5 +1,6 @@
 package framework.ultralesson.webautomation;
 
+import framework.ultralesson.webautomation.drivers.DriverCreator;
 import framework.ultralesson.webautomation.models.Item;
 import framework.ultralesson.webautomation.pages.HomePage;
 import framework.ultralesson.webautomation.pages.LauncherPage;
@@ -15,11 +16,11 @@ public class SearchTests {
 
         String searchItem = "Jeans";
         String searchKey = "jeans";
-        WebDriver webDriver=null;
+        String browser = "edge";
 
+        WebDriver webDriver = new DriverCreator().create(browser);
         LauncherPage launcherPage = new LauncherPage(webDriver);
         launcherPage.navigateTo("https://www.amazon.com/");
-
         HomePage homePage=new HomePage(webDriver);
         homePage.search(searchItem);
         List<Item> resultItems=homePage.getSearchItems();
