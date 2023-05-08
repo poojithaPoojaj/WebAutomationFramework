@@ -28,6 +28,7 @@ public class ChromeDriverManager implements DriverManager<WebDriver> {
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("disable-gpu");
+        chromeOptions.addArguments("--remote-allow-origins=*");
         return chromeOptions;
     }
     public ChromeOptions getChromeDriver() {
