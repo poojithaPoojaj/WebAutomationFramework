@@ -1,7 +1,9 @@
 package framework.ultralesson.webautomation.drivers;
 
+import framework.ultralesson.webautomation.drivers.managers.ChromeMobileEmulationManager;
 import framework.ultralesson.webautomation.drivers.managers.DriverManager;
 import framework.ultralesson.webautomation.drivers.managers.FireFoxDriverManager;
+import framework.ultralesson.webautomation.drivers.managers.FireFoxMobileEmulationManager;
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import io.github.bonigarcia.wdm.managers.EdgeDriverManager;
 import io.github.bonigarcia.wdm.managers.FirefoxDriverManager;
@@ -44,6 +46,8 @@ public class DriverCreator {
         driverManagerMap.put("chrome", new framework.ultralesson.webautomation.drivers.managers.ChromeDriverManager());
         driverManagerMap.put("firefox", new FireFoxDriverManager());
         driverManagerMap.put("edge", new framework.ultralesson.webautomation.drivers.managers.EdgeDriverManager());
+        driverManagerMap.put("chrome-mobile",new ChromeMobileEmulationManager());
+        driverManagerMap.put("firefox-mobile",new FireFoxMobileEmulationManager());
         return driverManagerMap;
     }
 
