@@ -17,7 +17,7 @@ public class SearchTests {
 
         String searchItem = "Jeans";
         String searchKey = "jeans";
-        String browser = "firefox";
+        String browser = "chrome";
 //        WebDriver webDriver=new DriverCreator().create(browser);
         WebDriverContext webDriverContext=  new DriverCreator().createDriverContext(browser);
         WebDriver webDriver=webDriverContext.create();
