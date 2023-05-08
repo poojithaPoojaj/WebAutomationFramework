@@ -19,8 +19,8 @@ public class DriverCreator {
             case "edge":
                 return new EdgeDriverManager().create();
             default:
-                WebDriver webDriver = new ChromeDriverManager().create();
-                return webDriver;
+                WebDriver driver = new ChromeDriverManager().create();
+                return driver;
         }
     }
 
