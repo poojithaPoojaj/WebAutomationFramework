@@ -1,12 +1,7 @@
 package framework.ultralesson.webautomation.drivers;
 
-import framework.ultralesson.webautomation.drivers.managers.ChromeMobileEmulationManager;
-import framework.ultralesson.webautomation.drivers.managers.DriverManager;
-import framework.ultralesson.webautomation.drivers.managers.FireFoxDriverManager;
-import framework.ultralesson.webautomation.drivers.managers.FireFoxMobileEmulationManager;
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-import io.github.bonigarcia.wdm.managers.EdgeDriverManager;
-import io.github.bonigarcia.wdm.managers.FirefoxDriverManager;
+import framework.ultralesson.webautomation.drivers.managers.*;
+
 import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
@@ -19,7 +14,8 @@ public class DriverCreator {
         browser = setDefaultBrowser(browser);
         switch (browser.toLowerCase()) {
             case "firefox":
-               return new FirefoxDriverManager().create();
+               return new FireFoxDriverManager().create();
+
             case "edge":
                 return new EdgeDriverManager().create();
             default:
