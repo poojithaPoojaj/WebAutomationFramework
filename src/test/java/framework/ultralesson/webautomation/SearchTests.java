@@ -15,14 +15,14 @@ public class SearchTests {
     @Test
     public void verifyIfSearchItemShowReleventResults() {
 
-//        String searchItem = "Jeans";
-//        String searchKey = "jeans";
-//        String browser = "firefox";
+        String searchItem = "Jeans";
+        String searchKey = "jeans";
+        String browser = "firefox";
 //        WebDriver webDriver=new DriverCreator().create(browser);
-////        WebDriverContext webDriverContext=  new DriverCreator().createDriverContext(browser);
-////        WebDriver webDriver=webDriverContext.create();
-//        LauncherPage launcherPage = new LauncherPage(webDriver);
-//        launcherPage.navigateTo("https://www.amazon.com/");
+        WebDriverContext webDriverContext=  new DriverCreator().createDriverContext(browser);
+        WebDriver webDriver=webDriverContext.create();
+        LauncherPage launcherPage = new LauncherPage(webDriver);
+        launcherPage.navigateTo("https://www.amazon.com/");
 //        HomePage homePage=new HomePage(webDriver);
 //        homePage.search(searchItem);
 //        List<Item> resultItems=homePage.getSearchItems();
